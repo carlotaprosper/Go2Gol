@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos API Valencia</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .registro { background: #f4f4f4; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
-        pre { white-space: pre-wrap; word-wrap: break-word; }
-    </style>
+    <title>Sostenibilidad Go2Gol</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Datos de Sostenibilidad</h1>
-    <div id="resultado">Cargando datos desde el servidor...</div>
 
-    <script src="index.js"></script>
+    <div id="dashboard-wrapper">
+        <div id="svg-background"></div>
+
+        <div id="controls">
+            <select id="zona-selector">
+                <option value="" disabled selected>COMPARA POR ZONAS &nbsp;&nbsp; ≡</option>
+            </select>
+        </div>
+
+        <div id="grafica-sin" class="plotly-container"></div>
+        <div id="grafica-con" class="plotly-container"></div>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="./index.js"></script>
 </body>
 </html>

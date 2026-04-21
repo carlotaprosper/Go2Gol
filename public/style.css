@@ -1,0 +1,93 @@
+/* configuración general */
+body { 
+    margin: 0; 
+    padding: 0; 
+    background-color: #fcfaff; 
+}
+
+/* contenedor principal que mide lo mismo que el SVG */
+#dashboard-wrapper {
+    position: relative;
+    width: 1440px; 
+    margin: 0 auto; /* centra el diseño en la pantalla */
+}
+
+/* el SVG de fondo */
+#svg-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* controles flotantes (graficos + selector)*/
+#controls {
+    position: absolute;
+    top: 980px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+ /* zona del selctor*/
+#zona-selector {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none; /* quita la flecha del selector */
+    -moz-appearance: none;
+    
+    width: 248px;  /* dimensiones del figma */
+    height: 47px;  
+    
+    background: white;
+    border: 2px solid #630099;
+    border-radius: 50px;
+    color: #630099;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    
+    text-align: center; /* centra horizontalmente */
+    line-height: 43px; /* altura del botón */
+    padding: 0;
+    vertical-align: middle;
+
+    /* posicionamiento */
+    top: -8.5px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#zona-selector {
+    padding-left: 20px; 
+}
+
+#zona-selector:focus {
+    border-color: #630099;
+    outline: none;
+}
+
+/* esto quita la flecha en Internet Explorer / Edge */
+#zona-selector::-ms-expand {
+    display: none;
+}
+
+/* contenedores de las gráficas */
+.plotly-container {
+    position: absolute;
+    z-index: 10;
+    width: 480px; 
+    height: 320px;
+    background: transparent;
+}
+
+/* coordenadas exactas para encajar en los cuadros */
+#grafica-sin {
+    top: 1063px; 
+    left: 189px;
+}
+
+#grafica-con {
+    top: 1063px;
+    left: 740px;
+}
