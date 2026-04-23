@@ -13,7 +13,7 @@ const maxAngulo = 225;
 const pivotX = 996;
 const pivotY = 377;
 
-const svgCargado = d3.xml("./Sostenibilidad.svg").then(xml => {
+const svgCargado = d3.xml("/Sostenibilidad.svg").then(xml => {
     const importedNode = document.importNode(xml.documentElement, true);
     d3.select("#svg-background").node().appendChild(importedNode);
 
@@ -52,11 +52,7 @@ async function cargarDatos() {
         console.log("Respuesta completa API:", data);
 
     
-        const todosLosRegistros =
-            data?.result?.records ||
-            data?.records ||
-            data?.result ||
-            data;
+        const todosLosRegistros = data;
 
         if (!Array.isArray(todosLosRegistros)) {
             throw new Error("La respuesta de /api/sostenibilidad no contiene un array de registros válido.");
